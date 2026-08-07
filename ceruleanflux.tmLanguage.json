@@ -1,0 +1,27 @@
+{
+  "$schema": "https://githubusercontent.com",
+  "name": "CeruleanFlux",
+  "scopeName": "source.ceruleanflux",
+  "fileTypes": ["cflx"],
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#keywords" },
+    { "include": "#boolean" },
+    { "include": "#declaration_identifiers" },
+    { "include": "#numbers" },
+    { "include": "#functions" },
+    { "include": "#namespace_seperators" },
+    { "include": "#punctuation" }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.other.ceruleanflux",
+          "match": "\\b(is|in|if|else|rpt|run|until|escape|skip|restart|noop|label|telpto|verify|ptm|return|flow|emit|detached|incomplete|flexible|finalized|changed|finished|self|struct|packed|enum|trait|adopts|masked|gen|use|bring|package|module|unbuffered|pinned|public|private|frozen|fixed|thawed|destroy|align|borrow|compare|case|other|fall|asm|as|from|with|guarantee|witness|always|later|pool|spawn|join|select|tunnel|isolated|share|when|excluding|decrease|unless|latent|vapor|transparent)\\b"
+        }
+      ]
+    }
+  }
+}
