@@ -6,12 +6,11 @@
   "patterns": [
     { "include": "#comments" },
     { "include": "#strings" },
+    { "include": "#booleans" },
+    { "include": "#nulls" },
     { "include": "#keywords" },
-    { "include": "#boolean" },
     { "include": "#declaration_identifiers" },
     { "include": "#numbers" },
-    { "include": "#functions" },
-    { "include": "#namespace_seperators" },
     { "include": "#punctuation" }
   ],
   "repository": {
@@ -20,6 +19,14 @@
         {
           "name": "keyword.other.ceruleanflux",
           "match": "\\b(is|in|if|else|rpt|run|until|escape|skip|restart|noop|label|telpto|verify|ptm|return|flow|emit|detached|incomplete|flexible|finalized|changed|finished|self|struct|packed|enum|trait|adopts|masked|gen|use|bring|package|module|unbuffered|pinned|public|private|frozen|fixed|thawed|destroy|align|borrow|compare|case|other|fall|asm|as|from|with|guarantee|witness|always|later|pool|spawn|join|select|tunnel|isolated|share|when|excluding|decrease|unless|latent|vapor|transparent)\\b"
+        }
+      ]
+    },
+    "booleans": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.ceruleanflux",
+          "match": "\\b(true|false|nothing)\\b",
         }
       ]
     }
