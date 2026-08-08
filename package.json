@@ -1,0 +1,16 @@
+{
+  "name": "ceruleanflux-lang",
+  "version": "0.0.1",
+  "engines": { "vscode": "^1.0.0" },
+  "contributes": {
+    "languages": [{
+      "id": "ceruleanflux",
+      "extensions": [".cflx"]
+    }],
+    "grammars": [{
+      "language": "ceruleanflux",
+      "scopeName": "source.cflx",
+      "path": "./ceruleanflux.tmLanguage.json"
+    }]
+  }
+}
