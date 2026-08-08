@@ -110,7 +110,7 @@
         }
       ]
     },
-    "punctuations": {
+    "punctuation": {
       "patterns": [
         {
           "name": "punctuation.operator.ceruleanflux",
