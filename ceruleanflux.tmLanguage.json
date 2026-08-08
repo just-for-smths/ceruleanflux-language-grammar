@@ -5,15 +5,91 @@
   "fileTypes": ["cflx"],
   "patterns": [
     { "include": "#comments" },
+    { "include": "#bytes" },
     { "include": "#strings" },
+    { "include": "#characters" },
     { "include": "#booleans" },
-    { "include": "#nulls" },
     { "include": "#keywords" },
-    { "include": "#declaration_identifiers" },
     { "include": "#numbers" },
     { "include": "#punctuation" }
   ],
   "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.documentation.ceruleanflux",
+          "begin": "//:",
+          "end": "$"
+        },
+        {
+          "name": "comment.line.double-slash.ceruleanflux",
+          "begin": "//",
+          "end": "$"
+        },
+        {
+          "name": "comment.block.documentation.ceruleanflux",
+          "begin": "/-",
+          "end": "-/",
+          "patterns": [
+            { "include": "#comments" }
+          ]
+        },
+        {
+          "name": "comment.block.ceruleanflux",
+          "begin": "/\\*",
+          "end": "\\*/",
+          "patterns": [
+            { "include": "#comments" }
+          ]
+        }
+      ]
+    },
+    "bytes": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.bytes.ceruleanflux",
+          "begin": "b\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.ceruleanflux",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.ceruleanflux",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.ceruleanflux",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "characters": {
+      "patterns": [
+        {
+          "name": "string.quoted.single.character.ceruleanflux",
+          "match": "'([^'\\\\]|\\\\.)'"
+        }
+      ]
+    },
+    "booleans": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.ceruleanflux",
+          "match": "\\b(true|false|nothing)\\b"
+        }
+      ]
+    },
     "keywords": {
       "patterns": [
         {
@@ -22,11 +98,27 @@
         }
       ]
     },
-    "booleans": {
+    "numbers": {
       "patterns": [
         {
-          "name": "constant.language.boolean.ceruleanflux",
-          "match": "\\b(true|false|nothing)\\b",
+          "name": "constant.numeric.float.ceruleanflux",
+          "match": "\\b\\d+\\.\\d+\\b"
+        },
+        {
+          "name": "constant.numeric.integer.ceruleanflux",
+          "match": "\\b\\d+\\b"
+        }
+      ]
+    },
+    "punctuations": {
+      "patterns": [
+        {
+          "name": "punctuation.operator.ceruleanflux",
+          "match": "-->|<->|=>|<-|->|==|!=|>=|<=|\\+=|-=\\*=|/=|%=|&=|\\|=|^=|\\*\\*|\\+\\+|--|<<|>>|&&|\\|\\||>|<|=|\\+|-|\\*|/|%|&|\\||!|\\^|\\?"
+        },
+        {
+          "name": "punctuation.symbols.ceruleanflux",
+          "match": "\\.\\.\\.|\\[|\\]|\\{|\\}|\\(|\\)|,|:|#|\\.|\\$|~|@|`"
         }
       ]
     }
